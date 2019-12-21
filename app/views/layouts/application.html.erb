@@ -60,33 +60,33 @@
           </div>
         </div>
       </div>
+    </div>
 
     <hr />
-
     <br class="clear" />
+
+    <div class="container">
+      <% if flash[:error].present? %>
+        <div class="col-10 offset-1 alert alert-danger">
+          <%= flash[:error].html_safe %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
 
     <div class="footer">
       <div class="container">
-        <% if flash[:error].present? %>
-          <div class="col-10 offset-1 alert alert-danger">
-            <%= flash[:error].html_safe %>
-          </div>
-        <% end %>
-        <%= yield %>
-      </div>
         <div class="row">
-          <div class="col-12 col-sm-6">
-            <%= link_to "This is not enough, I need more", root_path, class: 'next-quote' %>
+          <div class="col-6">
+            <%= link_to "This isn't enough, I need more", root_path, class: 'next-quote' %>
           </div>
-          <div class="col-12 col-sm-6 footer-blurb">
-            Proudly built in ATX by <a href="[YOUR_PORTFOLIO_URL]">[Brolin Downie]</a><br />
-            Want to build your own Splurty Web App - <a href="https://online.bootcampspot.com">Learn how to code here</a>
+          <div class="col-6 footer-blurb">
+            Proudly hacked by <a href="[YOUR_PORTFOLIO_URL]">[Your name here]</a><br />
+             Want to build your own Splurty Web App - <a href="https://online.bootcampspot.com">Learn how to code here</a>
           </div>
         </div>
       </div>
     </div>
-
+   
   </body>
 </html>
